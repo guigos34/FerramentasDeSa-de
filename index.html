@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="menu-lateral">
+        <h3>Ferramentas</h3>
+
+        <a href="#calculadoraImc" class="botao-menu">Calculadora de IMC</a>
+        <a href="#calculadoraCalorias" class="botao-menu">Calculadora de calorias</a>
+    </div>
+    <header id="calculadoraImc">
+        <h1> Calculadora de IMC</h1>
+        <pre>IMC é a sigla para Índice de Massa Corpórea, 
+parâmetro adotado pela Organização Mundial de 
+Saúde para calcular o peso ideal de cada pessoa.
+            
+O índice é calculado da seguinte maneira: divide-se 
+o peso do paciente pela sua altura elevada ao 
+quadrado. Diz-se que o indivíduo tem peso normal 
+quando o resultado do IMC está entre 18,5 e 24,9.</pre>
+    </header>
+    <section class="form-imc">
+        <form>
+            <label>Altura:</label><br>
+            <input id="alturaIMC" type="text" placeholder="ex: 1,80"><br><br>
+
+            <label>Peso:</label><br>
+            <input id="pesoIMC" type="text" placeholder="ex: 60"><br><br>
+        </form>
+
+        <button class="btn-calcular" onclick="calcularIMC()">Calcular</button>
+
+        <h3 style="margin-top: 2rem;">Resultado</h3>
+
+        <div class="resultado-box">
+            <h4 id="ResultadoIMC"></h4>
+        </div>
+    </section>
+    <header id="calculadoraCalorias">
+        <h1> Calculadora de calorias (TBM e TDEE)</h1>
+        <pre>Para calcular as calorias totais de uma pessoa
+precisamos fazer dois calculos, a TBM(Taxa Metabólica Basal) e a 
+TDEE ou Gasto Energético.
+
+TMB é quantidade mínima de energia que o corpo consome para manter suas 
+funções vitais em repouso, como respiração, batimentos cardíacos e 
+manutenção da temperatura corporal.
+
+TDEE ou Gasto Energético Diário Total é a quantidade total de calorias que 
+seu corpo queima em um dia. Ele é calculado somando a sua Taxa Metabólica 
+Basal (TMB) ao gasto calórico de atividades físicas e não físicas, como trabalho 
+e exercícios. Para isso preencha os dados:</pre>
+    </header>
+    <section class="form-imc">
+        <form>
+            <label>Altura:</label><br>
+            <input id="alturaCT" type="text" placeholder="ex: 1,80"><br><br>
+
+            <label>Peso:</label><br>
+            <input id="pesoCT" type="text" placeholder="ex: 60"><br><br>
+
+            <label>Idade em anos:</label><br>
+            <input id="idadeCT" type="text" placeholder="ex: 25"><br><br>
+
+            <label>Nível de atividade:</label><br>
+            <select id="AtividadeNivel">
+                <option value="" disabled selected>Escolha uma opção</option>
+                <option value="1">Sedentario(Nenhum ou pouco exercício)</option>
+                <option value="2">Levemente ativo(exercício leve 1-3 dias na semana)</option>
+                <option value="3">Moderadamente ativo(exercício moderado 3-5 dias na semana)</option>
+                <option value="4">Muito ativo(exercício intenso 6-7 dias na semana)</option>
+            </select><br><br>
+            <label>Sexo:</label><br>
+            <select id="sexoCT">
+                <option value="" disabled selected>Escolha uma opção</option>
+                <option value="1">Homem</option>
+                <option value="2">Mulher</option>
+            </select>
+        </form><br>
+
+
+        <button class="btn-calcular" onclick="calcularTmbTdee()">Calcular calorias totais</button><br><br>
+
+        <h3>Sua taxa metabolica basal:</h3><br>
+        <div class="resultado-box">
+            <h4 id="ResultadoTMB"></h4>
+        </div>
+
+        <h3>Suas calorias totais:</h3><br>
+        <div class="resultado-box">
+            <h4 id="ResultadoTDEE"></h4>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; Meu site. Todos os direitos reservados</p>
+    </footer>
+</body>
+<script src="js/script.js"></script>
+
+</html>
